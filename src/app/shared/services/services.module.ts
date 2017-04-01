@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SettingsService } from './settings.service';
+import { RegionService } from './region.service';
+
 @NgModule({
   imports: [],
   exports : [],
@@ -11,13 +13,14 @@ export class ServicesModule{
     return {
       ngModule: ServicesModule,
       providers: [
-        SettingsService
+        SettingsService,
+        RegionService
       ]
     }
   }
 }
 
-
 export {
-  SettingsService
+  SettingsService,
+  RegionService
 }
