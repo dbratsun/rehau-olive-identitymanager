@@ -46,6 +46,12 @@ export class MockXHRBackend {
             name: "Region 3", 
             number: 3, 
             description: "Region 3 description"
+        },
+        {
+            id: "4", 
+            name: "Region 4", 
+            number: 4, 
+            description: "Region 4 description"
         }
     ]
 
