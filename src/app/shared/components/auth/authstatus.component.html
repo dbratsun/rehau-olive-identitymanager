@@ -1,0 +1,11 @@
+<div class="authstatus">
+    <a class="authstatus-username" *ngIf="IsAuthorized" (click)="usernameClick.emit()">
+        {{username}}
+    </a>
+    <a class="authstatus-login" *ngIf="!IsAuthorized" (click)="changeAuthStatus.emit()">
+        Login
+    </a>
+    <a class="authstatus-logout" *ngIf="IsAuthorized" (click)="changeAuthStatus.emit()">
+        Logout
+    </a>
+</div>

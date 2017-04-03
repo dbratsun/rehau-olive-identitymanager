@@ -9,7 +9,7 @@ import { RegionService } from '../../../../shared/services/region.service';
 @Component({
   selector: 'app-region',
   templateUrl: './region.component.html',
-  styleUrls: ['./region.component.css']
+  styleUrls: ['./region.component.scss']
 })
 export class RegionComponent implements OnInit {
   typeSub: Subscription;
