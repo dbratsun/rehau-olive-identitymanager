@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../shared/services/services.module';
 import { Settings } from '../../shared/models/settings';
 
-import { AuthComponent } from '../../shared/components/auth/auth.component';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

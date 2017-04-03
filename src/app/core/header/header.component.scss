@@ -105,6 +105,15 @@ h1 {
     margin-left: 60px;
   }
 
+  .auth-status {
+    color: #555;
+    margin-left: 55px;
+  }
+
+  .cc {
+    color: #fff;
+  }
+
   a {
     color: hsla(0,0%,100%,.8);
     text-decoration: none;
@@ -114,12 +123,52 @@ h1 {
     &:hover {
       color: #fff;
     }
+
   }
 
   .active {
     color: #fff;
   }
 }
+
+.header-auth {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  height: 100%;
+  // display: inline-block;
+  // margin-left: 20px;
+
+  @media #{$mobile-only} {
+    margin-left: 60px;
+  }
+
+  .auth-status {
+    color: #555;
+    margin-left: 55px;
+  }
+
+  .cc {
+    color: #fff;
+  }
+
+  a {
+    color: hsla(0,0%,100%,.8);
+    text-decoration: none;
+    margin: 0 5px;
+    letter-spacing: 1.8px;
+
+    &:hover {
+      color: #fff;
+    }
+
+  }
+
+  .active {
+    color: #fff;
+  }
+}
+
 
 .info {
   position: absolute;

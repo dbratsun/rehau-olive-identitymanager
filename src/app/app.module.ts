@@ -7,7 +7,7 @@ import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { SharedComponentModule } from './shared/components/sharedcomponents.module';
+import { SharedComponentsModule } from './shared/components/sharedcomponents.module';
 import { ServicesModule } from './shared/services/services.module';
 import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
 
@@ -22,7 +22,7 @@ import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
     HttpModule,
     ServicesModule.forRoot(),
     CoreModule,
-    SharedComponentModule
+    SharedComponentsModule
   ],
   providers: [
     { provide: XHRBackend, useClass: MockXHRBackend }

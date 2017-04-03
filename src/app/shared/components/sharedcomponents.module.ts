@@ -3,18 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { AuthComponent } from './auth/auth.component';
 import { AuthStatusComponent } from './auth/authstatus.component';
+// import { NavItemComponent } from './nav-item/nav-item.component';
+
+export const COMPONENETS = [
+    // NavItemComponent,
+    AuthComponent, 
+    AuthStatusComponent
+]
 
 @NgModule({
     imports: [ 
         CommonModule
     ],
-    declarations: [ 
-        AuthComponent, 
-        AuthStatusComponent
-    ],
-    exports: [ 
-        AuthComponent,
-        AuthStatusComponent
-    ]
+    declarations: COMPONENETS,
+    exports: COMPONENETS
 })
-export class SharedComponentModule {}
+export class SharedComponentsModule {}

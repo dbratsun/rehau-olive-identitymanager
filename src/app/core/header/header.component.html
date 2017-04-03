@@ -13,11 +13,14 @@
               |
             <a routerLink="/ask/1" routerLinkActive="active" (click)="scrollTop()">ask</a>
               |
-            <a routerLink="/jobs/1" routerLinkActive="active" (click)="scrollTop()">jobs</a>
+            <a class="cc" routerLink="/jobs/1" routerLinkActive="active" (click)="scrollTop()">jobs</a>
+              |
+          </span>
+          <span class="header-auth">
+            <oli-auth></oli-auth>
           </span>
         </div>
       </div>
-      <oli-auth></oli-auth>
       <div class="info">
         <img class="settings" src="assets/images/cog.svg" alt="Settings" (click)="toggleSettings()">
       </div>
