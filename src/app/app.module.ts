@@ -11,6 +11,8 @@ import { SharedComponentsModule } from './shared/components/sharedcomponents.mod
 import { ServicesModule } from './shared/services/services.module';
 import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
 
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +24,8 @@ import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
     HttpModule,
     ServicesModule.forRoot(),
     CoreModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    BootstrapModalModule
   ],
   providers: [
     { provide: XHRBackend, useClass: MockXHRBackend }

@@ -1,16 +1,22 @@
-Bulma A modern CSS framework based on Flexbox http://bulma.io/
+Flexbox
+    Bulma A modern CSS framework based on Flexbox http://bulma.io/
+    Flexbox dropdown navigation menu  https://codepen.io/lawnch/pen/Jbpng
+    Flexbox integration https://github.com/angular/flex-layout
 
-Flexbox dropdown navigation menu  https://codepen.io/lawnch/pen/Jbpng
+Using bootstrap
+    Using bootstrap https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a
+    Add bootstrap to angular-cli apps https://medium.com/@beeman/tutorial-add-bootstrap-to-angular-cli-apps-b0a652f2eb2
 
+Container & Presentation Components
+    Container And Presentation Components In Angular2 http://www.wintellect.com/devcenter/dbaskin/container-presentation-components-angular2
+    Angular Smart Components vs Presentation Components: What's the Difference, When to Use Each and Why? http://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/
 
-Using bootstrap https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a
+Bootstrap Navbar
+    Align navbar item to the right in bootstrap 4 alpha 6 http://stackoverflow.com/questions/41513463/align-navbar-item-to-the-right-in-bootstrap-4-alpha-6
+    Bootstrap 4 Navbar http://stackoverflow.com/documentation/twitter-bootstrap/9090/migrating-to-bootstrap-4/28674/bootstrap-4-navbar#t=201703020350421197321
 
+Bootstrap Flexbox
+    Flexbox https://v4-alpha.getbootstrap.com/utilities/flexbox/
 
-Add bootstrap to angular-cli apps https://medium.com/@beeman/tutorial-add-bootstrap-to-angular-cli-apps-b0a652f2eb2
-
-Flexbox integration https://github.com/angular/flex-layout
-
-Container And Presentation Components In Angular2 http://www.wintellect.com/devcenter/dbaskin/container-presentation-components-angular2
-
-Angular Smart Components vs Presentation Components: What's the Difference, When to Use Each and Why? http://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/
-
+Использовано
+    Для модальных окон - https://www.npmjs.com/package/ng2-bootstrap-modal

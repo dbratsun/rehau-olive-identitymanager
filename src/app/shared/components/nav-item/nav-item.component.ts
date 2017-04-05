@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'bc-nav-item',
+  selector: 'nav-item',
   template: `
     <a md-list-item [routerLink]="routerLink" (click)="activate.emit()">
       <md-icon md-list-icon>{{ icon }}</md-icon>
@@ -21,3 +21,5 @@ export class NavItemComponent {
   @Input() routerLink: string | any[] = '/';
   @Output() activate = new EventEmitter();
 }
+
+

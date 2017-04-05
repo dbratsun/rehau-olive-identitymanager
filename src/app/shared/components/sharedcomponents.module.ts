@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { AuthComponent } from './auth/auth.component';
 import { AuthStatusComponent } from './auth/authstatus.component';
-// import { NavItemComponent } from './nav-item/nav-item.component';
+import { LoaderComponent } from './loader/loader.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
+import { NavItemButtonComponent } from './nav-item/nav-item-button.component';
 
-export const COMPONENETS = [
-    // NavItemComponent,
+export const COMPONENTS = [
+    NavItemButtonComponent,
+    LoaderComponent,
+    ErrorMessageComponent,
     AuthComponent, 
     AuthStatusComponent
 ]
@@ -15,7 +19,7 @@ export const COMPONENETS = [
     imports: [ 
         CommonModule
     ],
-    declarations: COMPONENETS,
-    exports: COMPONENETS
+    declarations: COMPONENTS,
+    exports: COMPONENTS
 })
 export class SharedComponentsModule {}
