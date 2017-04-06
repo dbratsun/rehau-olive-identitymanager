@@ -31,27 +31,27 @@ export class MockXHRBackend {
     _regionItems = [
         {
             id: "1", 
-            name: "Region 1", 
-            number: 1, 
-            description: "Region 1 description"
+            name: "Moscow", 
+            number: 3251, 
+            description: "The biggest region in Russia"
         },
         {
             id: "2", 
-            name: "Region 2", 
-            number: 2, 
-            description: "Region 2 description"
+            name: "Sankt-Petersburg", 
+            number: 3253, 
+            description: "The most beatiful region in Russia"
         },
         {
             id: "3", 
-            name: "Region 3", 
-            number: 3, 
-            description: "Region 3 description"
+            name: "Rostov on Don", 
+            number: 3252, 
+            description: "The hottest region in Russia"
         },
         {
             id: "4", 
-            name: "Region 4", 
-            number: 4, 
-            description: "Region 4 description"
+            name: "Novosibirsk", 
+            number: 3254, 
+            description: "The coldest region in Russia"
         }
     ]
 

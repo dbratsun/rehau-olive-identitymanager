@@ -1,3 +1,13 @@
+<nav class="subnav" [clr-nav-level]="1">
+    <ul class="nav">
+        <li *ngFor="let subLink of subLinks" class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="subLink.link">{{subLink.label}}</a>
+        </li>
+    </ul>
+</nav>
+
+
+<!--
 <ul class="nav">
     <li class="nav-item">
     <a class="nav-link" href="#" [routerLink]="['/home']"
@@ -7,3 +17,4 @@
     <a class="nav-link" href="#" [routerLink]="['/about']" [class.active]="router.url==='/about'">About</a>
     </li>
 </ul>
+-->
