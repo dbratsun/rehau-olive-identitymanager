@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedComponentsModule } from '../shared/components/sharedcomponents.module';
 import { NavComponent } from './nav/nav.component';
-import { ConfirmComponent } from './testdialog/testdialog.component';
+import { SubNavComponent } from './sub-nav/sub-nav.component';
 
 @NgModule({
   imports: [
@@ -17,17 +17,15 @@ import { ConfirmComponent } from './testdialog/testdialog.component';
   declarations: [
     HeaderComponent, 
     NavComponent,
+    SubNavComponent,
     FooterComponent, 
-    SettingsComponent,
-    ConfirmComponent
+    SettingsComponent
   ],
   exports: [
     HeaderComponent, 
     NavComponent,
+    SubNavComponent,
     FooterComponent
-  ],
-  entryComponents: [
-    ConfirmComponent
   ]
 })
 export class CoreModule { }

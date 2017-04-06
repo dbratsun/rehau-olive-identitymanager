@@ -1,20 +1,5 @@
-@import "../../shared/scss/media";
-@import "../../shared/scss/themes";
-
-.info {
-  img {
-    opacity: 0.8;
-    width: 25px;
-    margin-top: 21.5px;
-    display: block;
-
-    &:hover {
-      opacity: 1;
-      cursor: pointer;
-    }
-
-    @media #{$mobile-only} {
-      margin-top: 15px;
-    }
+.clr-icon {
+  &.clr-clarity-logo {
+    background-image: url(../../../images/clarity_logo.svg);
   }
 }

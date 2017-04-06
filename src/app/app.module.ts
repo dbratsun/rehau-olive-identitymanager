@@ -11,7 +11,7 @@ import { SharedComponentsModule } from './shared/components/sharedcomponents.mod
 import { ServicesModule } from './shared/services/services.module';
 import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
 
-import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { ClarityModule } from 'clarity-angular';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
     ServicesModule.forRoot(),
     CoreModule,
     SharedComponentsModule,
-    BootstrapModalModule
+    ClarityModule.forRoot()
   ],
   providers: [
     { provide: XHRBackend, useClass: MockXHRBackend }
