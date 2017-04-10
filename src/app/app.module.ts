@@ -37,7 +37,7 @@ import { ClarityModule } from 'clarity-angular';
     ClarityModule.forRoot()
   ],
   providers: [
-    Repository,
+    Repository, // Class provider with dependencies https://angular.io/docs/ts/latest/guide/dependency-injection.html
     { provide: XHRBackend, useClass: MockXHRBackend }
   ],
   bootstrap: [AppComponent]
