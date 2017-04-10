@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from 'clarity-angular';
 
 import { AuthComponent } from './auth/auth.component';
@@ -23,6 +23,7 @@ export const COMPONENTS = [
     imports: [ 
         CommonModule,
         FormsModule,
+        ReactiveFormsModule,
         ClarityModule
     ],
     declarations: COMPONENTS,

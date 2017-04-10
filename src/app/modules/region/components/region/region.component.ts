@@ -19,6 +19,8 @@ export class RegionComponent implements OnInit {
   pageNum: number;
   listStart: number;
   errorMessage: string;
+  settingsCollapsed: boolean = false;
+  rowsPerPage: number = 2;
 
   constructor(
     private regionService: RegionService,
@@ -51,6 +53,15 @@ export class RegionComponent implements OnInit {
         );
       */  
     });
+  }
+
+  toggleSettings() {
+    this.settingsCollapsed = !this.settingsCollapsed;
+  }
+
+  settingsChanged(value) {
+    let v = value;
+    this.rowsPerPage = value.rowsPerPage;
   }
 
 }

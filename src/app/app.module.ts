@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, XHRBackend } from '@angular/http';
 
 // import { routing } from './app.routes';
@@ -25,6 +25,7 @@ import { ClarityModule } from 'clarity-angular';
     // routing,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     ServicesModule.forRoot(),
     CoreModule,
