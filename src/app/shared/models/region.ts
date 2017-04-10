@@ -1,9 +1,11 @@
 import { User } from './user';
 
 export class Region {
-    id: string;
-    name: string;
-    number: number;
-    description: string;
-    users: User[]    
+    constructor (	
+        public id: string,
+        public name: string,
+        public number: number,
+        public description?: string,
+        public users?: User[]
+    ) {}    
 }

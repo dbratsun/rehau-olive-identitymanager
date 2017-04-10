@@ -1,11 +1,12 @@
-import {Request, Response, ResponseOptions, RequestMethod} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import {Observer} from 'rxjs/Observer';
+import { Injectable } from '@angular/core';
+import { Request, Response, ResponseOptions, RequestMethod} from '@angular/http';
+import { Observable} from 'rxjs/Observable';
+import { Observer} from 'rxjs/Observer';
+import { Repository } from '../models/repository.model';
 
+@Injectable()
 export class MockXHRBackend {
-    constructor() {
-
-    }
+    constructor(private repo: Repository) { }
 
     createConnection(request: Request) {
         var response = new Observable((responseObserver: Observer<Response>) => {
@@ -15,7 +16,7 @@ export class MockXHRBackend {
                 case RequestMethod.Get: 
                     if (request.url === 'regions') {
                         responseOptions = new ResponseOptions({
-                            body: { regions: JSON.parse(JSON.stringify(this._regionItems))},
+                            body: { regions: JSON.parse(JSON.stringify(this.repo.getRegions()))},
                             status: 200
                         })
                     }

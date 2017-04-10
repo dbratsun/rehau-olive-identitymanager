@@ -13,6 +13,8 @@ import { ModulesModule } from './modules/modules.module';
 import { SharedComponentsModule } from './shared/components/sharedcomponents.module';
 import { ServicesModule } from './shared/services/services.module';
 import { MockXHRBackend } from './shared/services/mock.xhr-backend.service';
+import { ModelsModule } from './shared/models/models.module';
+import { Repository } from './shared/models/repository.model';
 
 import { ClarityModule } from 'clarity-angular';
 
@@ -30,10 +32,12 @@ import { ClarityModule } from 'clarity-angular';
     ServicesModule.forRoot(),
     CoreModule,
     ModulesModule,
+    ModelsModule,
     SharedComponentsModule,
     ClarityModule.forRoot()
   ],
   providers: [
+    Repository,
     { provide: XHRBackend, useClass: MockXHRBackend }
   ],
   bootstrap: [AppComponent]

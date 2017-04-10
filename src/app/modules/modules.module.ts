@@ -11,8 +11,10 @@ import { UserComponent } from './user/user.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { DivisionComponent } from './division/division.component';
 import { RegionComponent } from './region/components/region/region.component';
+import { RegionEditComponent } from './region/components/region/region-edit.component';
 
 import { SharedComponentsModule } from '../shared/components/sharedcomponents.module';
+import { ModelsModule } from '../shared/models/models.module';
 
 const COMPONENTS = [
     UnderConstructionComponent,
@@ -20,6 +22,7 @@ const COMPONENTS = [
     UserComponent,
     DivisionComponent,
     RegionComponent,
+    RegionEditComponent,
     ConfigurationComponent
 ];
 
@@ -29,7 +32,8 @@ const COMPONENTS = [
     FormsModule,
     RouterModule,
     ClarityModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    ModelsModule
   ],
   declarations: [
     ...COMPONENTS,

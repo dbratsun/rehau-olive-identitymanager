@@ -7,6 +7,7 @@ import { ConfigurationComponent } from './modules/configuration/configuration.co
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
 import { DivisionComponent } from './modules/division/division.component';
 import { RegionComponent } from './modules/region/components/region/region.component';
+import { RegionEditComponent } from './modules/region/components/region/region-edit.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
       { path: 'configuration/settings', component: ConfigurationComponent },
       { path: 'organization', redirectTo: '/organization/division', pathMatch: 'full' },
       { path: 'organization/division', component: DivisionComponent },
-      { path: 'organization/region', component: RegionComponent }
+      { path: 'organization/region', component: RegionComponent },
+      { path: 'organization/region/edit', component: RegionEditComponent }
     ]
   }
 ]
