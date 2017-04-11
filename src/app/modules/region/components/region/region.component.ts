@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Region } from '../../../../shared/models/region';
 import { RegionService } from '../../../../shared/services/region.service';
 
+import { Repository } from '../../../../shared/models/repository.model';
+
 @Component({
   selector: 'app-region',
   templateUrl: './region.component.html',
@@ -20,27 +22,31 @@ export class RegionComponent implements OnInit {
   listStart: number;
   errorMessage: string;
   settingsCollapsed: boolean = false;
-  rowsPerPage: number = 2;
+  rowsPerPage: number = 10;
 
   constructor(
     private regionService: RegionService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private repo: Repository
   ) { }
 
   ngOnInit() {
-    this.typeSub = this.route
-      .data
-      .subscribe(data => {
-        this.regionType = (data as any).regionType;
+      this.items = this.repo.getRegions();
+      /*
+      this.typeSub = this.route
+        .data
+        .subscribe(data => {
+          this.regionType = (data as any).regionType;
+        });
+
+      this.pageSub = this.route.params.subscribe(params => {
+        this.pageNum = params['page'] ? +params['page'] : 1;
+        this.regionService.get()
+          .subscribe( regions => {
+            this.items = regions;
+          })
       });
-
-    this.pageSub = this.route.params.subscribe(params => {
-      this.pageNum = params['page'] ? +params['page'] : 1;
-      this.regionService.get()
-        .subscribe( regions => {
-          this.items = regions;
-        })
-
+      */    
       /*
       this._hackerNewsAPIService.fetchFeed(this.feedType, this.pageNum)
         .subscribe(
@@ -52,7 +58,6 @@ export class RegionComponent implements OnInit {
           }
         );
       */  
-    });
   }
 
   toggleSettings() {
@@ -62,6 +67,10 @@ export class RegionComponent implements OnInit {
   settingsChanged(value) {
     let v = value;
     this.rowsPerPage = value.rowsPerPage;
+  }
+
+  deleteRegion(id) {
+    this.repo.deleteRegion(id);  
   }
 
 }

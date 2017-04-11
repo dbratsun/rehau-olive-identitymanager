@@ -2,7 +2,7 @@
     <div [ngClass]="{'col-xs-9' : !settingsCollapsed, 'col-xs-12': settingsCollapsed}">
         <div class="row">
             <div class="col-xs-10">
-                <button type="submit" class="btn btn-primary">ADD</button>
+                <button class="btn btn-primary" routerLink="/organization/region/new">ADD</button>
             </div>
             <div class="row col-xs-2 flex-items-xs-right">
                     <button class="btn" (click)="toggleSettings()">Settings
@@ -23,8 +23,8 @@
                 <clr-dg-cell>{{item.number}}</clr-dg-cell>
                 <clr-dg-cell>{{item.description}}</clr-dg-cell>
                 <clr-dg-action-overflow>
-                    <button class="action-item" (click)="onEdit(user)">Edit</button>
-                    <button class="action-item" (click)="onDelete(user)">Delete</button>
+                    <button class="action-item" [routerLink]="['/organization/region', 'edit', item.id]">Edit</button>
+                    <button class="action-item" (click)="deleteRegion(item.id)">Delete</button>
                 </clr-dg-action-overflow>
             </clr-dg-row>
             <clr-dg-footer>

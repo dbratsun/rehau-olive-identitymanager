@@ -24,7 +24,8 @@ const routes: Routes = [
       { path: 'organization', redirectTo: '/organization/division', pathMatch: 'full' },
       { path: 'organization/division', component: DivisionComponent },
       { path: 'organization/region', component: RegionComponent },
-      { path: 'organization/region/edit', component: RegionEditComponent }
+      { path: 'organization/region/:mode', component: RegionEditComponent },
+      { path: 'organization/region/:mode/:id', component: RegionEditComponent }
     ]
   }
 ]
