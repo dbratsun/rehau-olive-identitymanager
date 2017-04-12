@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SettingsService } from './settings.service';
 import { RegionService } from './region.service';
-import { StaticDataSource } from '../models/mock.datasource';
 import { ModelsModule } from '../models/models.module';
 
 @NgModule({

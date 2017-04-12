@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { HttpModule, JsonpModule } from "@angular/http"
 import { Repository } from "./repository.model";
-import { StaticDataSource } from "./mock.datasource";
+import { StaticDataSource } from "./static.datasource";
 
 @NgModule({
     imports: [
