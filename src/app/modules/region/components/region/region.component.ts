@@ -73,4 +73,12 @@ export class RegionComponent implements OnInit {
     this.repo.deleteRegion(id);  
   }
 
+  getUsersInfoString(region: Region) : string {
+    let names = region.users.map(u => u.username);
+    if (names.length > 0) {
+      return names.join(', ');
+    } 
+    else return ""   
+  }
+
 }

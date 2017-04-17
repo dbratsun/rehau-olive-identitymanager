@@ -2,10 +2,14 @@ import { Region } from './region';
 import { Division } from './division';
 
 export class User {
-    id: string;
-    username: string;
-    birthdate: Date;
-    email: string;
-    phonenumber: string;
-    regions: Region[]
+    constructor(
+        public id?: number,
+        public username?: string,
+        public birthdate?: Date,
+        public email?: string,
+        public phonenumber?: string,
+        public regions?: Region[],
+        public division?: Division[]
+    ) {}
+
 }

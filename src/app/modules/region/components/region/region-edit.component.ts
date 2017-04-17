@@ -45,4 +45,15 @@ export class RegionEditComponent {
         this.region = new Region();
     }
 
+    onTabSelected(event) {
+
+    }
+
+    onTabIndexChanged(event) {
+
+    }
+
+    onTabContentActivated(event) {
+        
+    }
 }

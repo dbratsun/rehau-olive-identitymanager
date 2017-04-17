@@ -16,12 +16,14 @@
             <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
             <clr-dg-column [clrDgField]="'number'">Number</clr-dg-column>
             <clr-dg-column [clrDgField]="'description'">Description</clr-dg-column>
+            <clr-dg-column [clrDgField]="'users'">Users</clr-dg-column>
             <clr-dg-placeholder>We couldn't find any regions!</clr-dg-placeholder>
             <clr-dg-row *clrDgItems="let item of items" [clrDgItem]="item">
                 <clr-dg-cell>{{item.id}}</clr-dg-cell>
                 <clr-dg-cell>{{item.name}}</clr-dg-cell>
                 <clr-dg-cell>{{item.number}}</clr-dg-cell>
                 <clr-dg-cell>{{item.description}}</clr-dg-cell>
+                <clr-dg-cell>{{getUsersInfoString(item)}}</clr-dg-cell>
                 <clr-dg-action-overflow>
                     <button class="action-item" [routerLink]="['/organization/region', 'edit', item.id]">Edit</button>
                     <button class="action-item" (click)="deleteRegion(item.id)">Delete</button>
