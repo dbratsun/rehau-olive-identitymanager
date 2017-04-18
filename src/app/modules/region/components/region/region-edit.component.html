@@ -1,39 +1,51 @@
 <h2>{{editing  ? "Edit" : "Create"}} Region</h2>
-<form novalidate #form="ngForm" (ngSubmit)="submitForm(form)" (reset)="resetForm()" >
-    <button type="submit" class="btn btn-primary" 
-            [class.btn-warning]="editing" [disabled]="form.invalid">
-        {{editing ? "Save" : "Create"}}
-    </button>
-    <button type="reset" class="btn btn-secondary" routerLink="/organization/region">Cancel</button>
-    <clr-tabs (clrTabsCurrentTabLinkChanged)="onTabSelected($event)"
-            (clrTabsCurrentTabIndexChanged)="onTabIndexChanged($event)"
-            (clrTabsCurrentTabContentChanged)="onTabContentActivated($event)">
-        <clr-tab-link [clrTabLinkId]="'link1'" [clrTabLinkActive]="true">Main</clr-tab-link>
-        <clr-tab-link>Users</clr-tab-link>
-        <clr-tab-link>Additional</clr-tab-link>
-
-        <clr-tab-content [clrTabContentId]="'content1'" [clrTabContentActive]="true">
-            <section class="form-block">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" [(ngModel)]="region.name" required />
-                </div>
-                <div class="form-group">
-                    <label>Number</label>
-                    <input type="text" name="number" [(ngModel)]="region.number" required />
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <input type="text" name="description" [(ngModel)]="region.description" size="90" />
-                </div>
-            </section>
-        </clr-tab-content>
-        <clr-tab-content>
-            <p>Content for Users tab.</p>
-        </clr-tab-content>
-        <clr-tab-content>
-            <p>Content for Additionsl tab.</p>
-        </clr-tab-content>
-    </clr-tabs>
-</form>
-
+<div class="col-xs-6">
+    <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)" (reset)="resetForm()" >
+        <section class="form-block">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" [(ngModel)]="region.name" required />
+            </div>
+            <div class="form-group">
+                <label>Number</label>
+                <input type="text" name="number" [(ngModel)]="region.number" required />
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea rows="3" name="description" [(ngModel)]="region.description" size="90"></textarea>
+            </div>
+        </section>
+        <section class="form-block" size="70">
+            <clr-stack-view size="70">
+                <clr-stack-block>
+                    <clr-stack-label>Users</clr-stack-label>
+                    <clr-stack-block *ngFor="let user of region.users">
+                        <clr-stack-label>{{user.fullname}}</clr-stack-label>
+                        <clr-stack-content>{{user.email}}</clr-stack-content>
+                        <!--clr-stack-content>
+                            <button class="btn btn-link">Remove
+                                <!!--clr-icon shape="close" size="16"></clr-icon--!>
+                            </button>
+                        </clr-stack-content-->
+                    </clr-stack-block>
+                    <clr-stack-block>
+                        <clr-stack-label>
+                            <button type="button" class="btn btn-secondary" (click)="openUserModal($event)">Change</button>
+                        </clr-stack-label>
+                    </clr-stack-block>
+                </clr-stack-block>
+            </clr-stack-view>
+        </section>
+        <button type="submit" class="btn btn-primary" 
+                [class.btn-warning]="editing" [disabled]="form.invalid">
+            {{editing ? "Save" : "Create"}}
+        </button>
+        <button type="reset" class="btn btn-secondary" routerLink="/organization/region">Cancel</button>
+    </form>
+    <clr-modal [(clrModalOpen)]="openedUserModal">
+        <app-user-select text="test string"></app-user-select>
+    </clr-modal>                
+    <div *ngIf="openedUserModal">
+        <app-user-select text="test string" [users]="region.users" (action)="modalChanged($event)"></app-user-select>
+    </div>                
+<div>

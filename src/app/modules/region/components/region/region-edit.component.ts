@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Region } from '../../../../shared/models/region';
 import { Repository } from '../../../../shared/models/repository.model';
+import { UserSelectComponent } from '../../../user/user-select.component';
 
 @Component({
     selector: 'app-region-edit',
@@ -12,6 +13,7 @@ import { Repository } from '../../../../shared/models/repository.model';
 export class RegionEditComponent {
     region: Region = new Region();    
     editing: boolean = false;
+    openedUserModal: boolean = false;
     constructor(
         private repo: Repository,
         private activeRoute: ActivatedRoute,
@@ -55,5 +57,14 @@ export class RegionEditComponent {
 
     onTabContentActivated(event) {
         
+    }
+
+    openUserModal($event) {
+        $event.preventDefault();
+        this.openedUserModal = true;
+    }
+
+    modalChanged(value) {
+        this.openedUserModal = false;
     }
 }

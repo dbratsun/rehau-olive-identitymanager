@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Region } from "./region";
+import { User } from "./user";
 import { Observable } from "rxjs/Observable";
 import { StaticDataSource } from "./static.datasource";
 
 @Injectable()
 export class Repository {
     private regions: Region[] = new Array<Region>();
+    private users: User[] = new Array<User>();
     private regionLocator = (r: Region, id: number) => r.id == id;
     
     constructor(private dataSource: StaticDataSource) {
@@ -16,6 +18,10 @@ export class Repository {
 
     getRegions() : Region[] {
         return this.regions;
+    }
+
+    getUsers() : User[] {
+        return this.dataSource.getUsers();
     }
 
     getRegion(id: number): Region {

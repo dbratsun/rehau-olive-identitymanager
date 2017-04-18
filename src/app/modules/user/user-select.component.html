@@ -1,0 +1,40 @@
+<!--h3>I have a nice title</h3>
+<p>{{text}}</p>
+<button type="button" class="btn btn-outline" (click)="opened = false">Cancel</button>
+<button type="button" class="btn btn-primary" (click)="opened = false">Ok</button-->
+
+<!--h3 class="modal-title">I have a nice title</h3>
+<div class="modal-body">
+    <p>{{text}}</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="opened = false">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="opened = false">Ok</button>
+</div-->
+
+
+<div class="modal">
+    <div class="modal-dialog" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close" class="close" type="button">
+                    <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                </button>
+                <h3 class="modal-title">Please select the user(s)</h3>
+            </div>
+            <div class="modal-body">
+                <clr-datagrid [(clrDgSelected)]="selectedUsers" [(clrDgSingleSelected)]="changed">
+                    <clr-dg-column>User</clr-dg-column>
+                    <clr-dg-row *clrDgItems="let user of users" [clrDgItem]="user" class="disabled">
+                        <clr-dg-cell>{{user.fullname}}</clr-dg-cell>
+                    </clr-dg-row>
+                </clr-datagrid>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" type="button" (click)="onCancel()">Cancel</button>
+                <button class="btn btn-primary" type="button" (click)="onSave()" [disabled]="!changed">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop" aria-hidden="true"></div>

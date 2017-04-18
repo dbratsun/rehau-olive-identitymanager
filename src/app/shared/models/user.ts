@@ -5,6 +5,7 @@ export class User {
     constructor(
         public id?: number,
         public username?: string,
+        public fullname?: string,
         public birthdate?: Date,
         public email?: string,
         public phonenumber?: string,

@@ -12,9 +12,9 @@ export class StaticDataSource {
 
     constructor() {
         this.users = new Array<User>(
-            new User(1, "bratdmi", new Date(1966, 6, 14), "dmitrij.bratsun@rehau.com", "+79268007822", new Array<Region>(), new Array<Division>()),
-            new User(2, "petrrom", new Date(1976, 3, 24), "roman.petrow@rehau.com", "+79268007832", new Array<Region>(), new Array<Division>()),
-            new User(3, "vasiand", new Date(1973, 11, 3), "andrej.vasiljev@rehau.com", "+79268007844", new Array<Region>(), new Array<Division>())
+            new User(1, "bratdmi", "Dmitry Bratsun", new Date(1966, 6, 14), "dmitrij.bratsun@rehau.com", "+79268007822", new Array<Region>(), new Array<Division>()),
+            new User(2, "petrrom", "Roman Petrow", new Date(1976, 3, 24), "roman.petrow@rehau.com", "+79268007832", new Array<Region>(), new Array<Division>()),
+            new User(3, "vasiand", "Andrej Vasilijev", new Date(1973, 11, 3), "andrej.vasiljev@rehau.com", "+79268007844", new Array<Region>(), new Array<Division>())
         );
         this.regions = new Array<Region>(
             new Region(1, "Moscow", 3251, "The biggest region in Russia", new Array<User>()), 
@@ -47,6 +47,10 @@ export class StaticDataSource {
 
     getRegions(): Region[] {
         return this.regions;
+    }
+
+    getUsers(): User[] {
+        return this.users;
     }
 
     getMaxRegionId(): number {
