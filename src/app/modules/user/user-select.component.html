@@ -23,9 +23,9 @@
                 <h3 class="modal-title">Please select the user(s)</h3>
             </div>
             <div class="modal-body">
-                <clr-datagrid [(clrDgSelected)]="selectedUsers" [(clrDgSingleSelected)]="changed">
+                <clr-datagrid [(clrDgSelected)]="selected"> 
                     <clr-dg-column>User</clr-dg-column>
-                    <clr-dg-row *clrDgItems="let user of users" [clrDgItem]="user" class="disabled">
+                    <clr-dg-row *clrDgItems="let user of users" [clrDgItem]="user" (clrDgSelectedChange)="onSelectedChanged($event)">
                         <clr-dg-cell>{{user.fullname}}</clr-dg-cell>
                     </clr-dg-row>
                 </clr-datagrid>

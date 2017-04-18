@@ -42,9 +42,6 @@
         </button>
         <button type="reset" class="btn btn-secondary" routerLink="/organization/region">Cancel</button>
     </form>
-    <clr-modal [(clrModalOpen)]="openedUserModal">
-        <app-user-select text="test string"></app-user-select>
-    </clr-modal>                
     <div *ngIf="openedUserModal">
         <app-user-select text="test string" [users]="region.users" (action)="modalChanged($event)"></app-user-select>
     </div>                

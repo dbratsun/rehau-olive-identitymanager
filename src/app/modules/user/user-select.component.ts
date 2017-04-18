@@ -1,15 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter, IterableDiffers } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../shared/models/user';
 import { Repository } from '../../shared/models/repository.model';
-import 'rxjs/Rx';
+
+// minimize the output bundle
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-user-select',
   templateUrl: 'user-select.component.html'
 })
-export class UserSelectComponent {
+export class UserSelectComponent implements OnInit {
     @Input() text: string;
     @Input('users') selectedUsers: User[];
     @Output() action = new EventEmitter();
@@ -18,17 +23,14 @@ export class UserSelectComponent {
     changed: boolean = false;
     first: boolean = true;
     data: Observable<Array<User>>;
+    selected: User[] = new Array<User>();
 
-    constructor(
-        private repo: Repository,
-        private _differs: IterableDiffers
-        ) {
+    constructor(private repo: Repository) {
+    }
+
+    ngOnInit() {
         this.users = this.repo.getUsers();
-        this.data = Observable.of(this.selectedUsers);
-        this.data.subscribe(
-            value => this.changed = false
-        );
-        // this.users.forEach(r => this.selectedUsers.push(r));
+        this.selectedUsers.forEach(user => this.selected.push(user)); 
     }
 
     onCancel() {
@@ -50,8 +52,12 @@ export class UserSelectComponent {
         // return this.users.some(u => this.selectedUsers.includes(u));
     }
 
-    ngDoCheck(): void {
+    onSelectedChanged(event) {
+        let su = Observable.from(this.selectedUsers);
+        let s = Observable.from(this.selected);
 
+        var source = su.sequenceEqual(s);
+        source.subscribe(x => this.changed = !x);    
     }
 
 }
