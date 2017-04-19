@@ -42,7 +42,8 @@ export class UserSelectComponent implements OnInit {
 
     onSave() {
         let output = {
-            mode: "save"
+            mode: "save",
+            selected: this.selected
         };
         this.action.emit(output);
     }
@@ -53,8 +54,8 @@ export class UserSelectComponent implements OnInit {
     }
 
     onSelectedChanged(event) {
-        let su = Observable.from(this.selectedUsers);
-        let s = Observable.from(this.selected);
+        let su = Observable.from(this.selectedUsers.map(p => p.id).sort());
+        let s = Observable.from(this.selected.map(p => p.id).sort());
 
         var source = su.sequenceEqual(s);
         source.subscribe(x => this.changed = !x);    

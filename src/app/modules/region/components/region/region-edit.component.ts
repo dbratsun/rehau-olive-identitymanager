@@ -65,6 +65,10 @@ export class RegionEditComponent {
     }
 
     modalChanged(value) {
+        if (value.mode == 'save') {
+            this.region.users.splice(0, this.region.users.length)
+            value.selected.forEach(p => this.region.users.push(p));
+        }        
         this.openedUserModal = false;
     }
 }
