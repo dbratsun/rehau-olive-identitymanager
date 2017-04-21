@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { UserComponent } from './modules/user/user.component';
+import { UserListComponent } from './modules/user/user-list.component';
 import { ConfigurationComponent } from './modules/configuration/configuration.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
 import { DivisionComponent } from './modules/division/division.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'dashboard/main', component: DashboardComponent },
       { path: 'dashboard', redirectTo: '/dashboard/main', pathMatch: 'full' },
       { path: 'users', redirectTo: '/users/users', pathMatch: 'full' },
-      { path: 'users/users', component: UserComponent },
+      { path: 'users/users', component: UserListComponent },
       { path: 'configuration', redirectTo: '/configuration/settings', pathMatch: 'full' },
       { path: 'configuration/settings', component: ConfigurationComponent },
       { path: 'organization', redirectTo: '/organization/division', pathMatch: 'full' },

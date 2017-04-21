@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-division',
   template: `
     <h1>Division page is under construction</h1>
+    <comment-dialog></comment-dialog>
   `
 })
 export class DivisionComponent {

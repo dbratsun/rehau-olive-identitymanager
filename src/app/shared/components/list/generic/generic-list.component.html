@@ -1,0 +1,21 @@
+<div class="row">
+    <div [ngClass]="{'col-xs-9' : !settingsCollapsed, 'col-xs-12': settingsCollapsed}">
+        <div class="row">
+            <div class="col-xs-10">
+                <button class="btn btn-primary" routerLink="addRouterLink">ADD</button>
+            </div>
+            <div class="row col-xs-2 flex-items-xs-right">
+                    <button class="btn" (click)="toggleSettings()">Settings
+                        <clr-icon *ngIf="settingsCollapsed"shape="collapse right"></clr-icon>
+                        <clr-icon *ngIf="!settingsCollapsed"shape="collapse left"></clr-icon>
+                    </button>
+            </div>
+        </div>
+        <ng-content></ng-content>
+    </div>
+    <div *ngIf="!settingsCollapsed" class="col-xs-3">
+        <app-datagrid-settings (values)="settingsChanged($event)" 
+            numberFieldName="regions" [countToShow]="countToShow" [rowsPerPage]="rowsPerPage">
+        </app-datagrid-settings>
+    </div>
+</div>

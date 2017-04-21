@@ -1,0 +1,32 @@
+<generic-modal [showObservable]="showModalObservable" title="New Comment">
+    <form class="form compact" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <section class="form-block">
+            <div class="form-group">
+                <label for="header">Header</label>
+                <input name="header" id="header" formControlName="commentHeader">
+            </div>
+            <div class="form-group">
+                <label for="text">Text</label>
+                <textarea name="text" id="text" formControlName="commentText"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </section>
+    </form>
+</generic-modal>
+
+
+<!--generic-modal [showObservable]="showModalObservable" title="New Comment">
+  <div>{{commentHeader}}</div>
+  <form #form="ngForm" (ngSubmit)="submitComment(form)">
+    <textarea class="comment__text-area " ngControl="comment" placeholder="{{commentPlaceholder}}"></textarea>
+    <div class="comment__buttons">
+      <button class="comment__btn-cancel" (click)="cancel($event)" title="{{cancel}}">
+        {{cancel}}
+      </button>
+      <button class="comment__btn-save" type="submit" [disabled]="!isDataValid(commentForm.value)" title="{{save}}">
+        {{addComment}}
+      </button>
+    </div>
+  </form>
+</generic-modal-->
+

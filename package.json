@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-generic-table/core": "^4.1.0-rc.3",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",

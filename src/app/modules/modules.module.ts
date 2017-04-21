@@ -7,7 +7,7 @@ import { ClarityModule } from 'clarity-angular';
 
 import { UnderConstructionComponent } from './underconstruction/underconstruction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
+import { UserListComponent } from './user/user-list.component';
 import { UserSelectComponent } from './user/user-select.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { DivisionComponent } from './division/division.component';
@@ -20,7 +20,7 @@ import { ModelsModule } from '../shared/models/models.module';
 const COMPONENTS = [
     UnderConstructionComponent,
     DashboardComponent,
-    UserComponent,
+    UserListComponent,
     UserSelectComponent,
     DivisionComponent,
     RegionComponent,

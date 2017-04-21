@@ -10,13 +10,21 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
 import { NavItemButtonComponent } from './nav-item/nav-item-button.component';
 import { DatagridSettingsComponent } from './datagrid/datagrid-settings.component';
 
+import { GenericModalComponent } from "./dialog/generic/generic-modal.component";
+import { CommentDialogComponent } from "./dialog/components/comment/comment-dialog.component";
+
+import { GenericListComponent } from "./list/generic/generic-list.component";
+
 export const COMPONENTS = [
     DatagridSettingsComponent,
     NavItemButtonComponent,
     LoaderComponent,
     ErrorMessageComponent,
     AuthComponent, 
-    AuthStatusComponent
+    AuthStatusComponent,
+    GenericModalComponent,
+    CommentDialogComponent,
+    GenericListComponent
 ]
 
 @NgModule({
