@@ -27,3 +27,6 @@ Clarity
 Generic Components
     Sparkbit: http://www.sparkbit.pl/generalizing-components-angular/
     
+For popup messages use toastr http://codeseven.github.io/toastr/demo.html and https://github.com/PointInside/ng2-toastr
+
+    
