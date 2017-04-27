@@ -17,7 +17,7 @@ import { ModelsModule } from './shared/models/models.module';
 import { Repository } from './shared/models/repository.model';
 
 import { ClarityModule } from 'clarity-angular';
-import { GenericTableModule } from '@angular-generic-table/core';
+// import { GenericTableModule } from '@angular-generic-table/core';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { GenericTableModule } from '@angular-generic-table/core';
     ModulesModule,
     ModelsModule,
     SharedComponentsModule,
-    ClarityModule.forRoot(),
-    GenericTableModule
+    ClarityModule.forRoot()
+    // GenericTableModule
   ],
   providers: [
     Repository, // Class provider with dependencies https://angular.io/docs/ts/latest/guide/dependency-injection.html

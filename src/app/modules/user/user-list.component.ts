@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GtConfig } from '@angular-generic-table/core';
+// import { GtConfig } from '@angular-generic-table/core';
 import { GenericListComponent } from "../../shared/components/list/generic/generic-list.component";
 import { Repository } from '../../shared/models/repository.model';
 
@@ -9,10 +9,11 @@ import { Repository } from '../../shared/models/repository.model';
   templateUrl: "user-list.component.html"
 })
 export class UserListComponent {
-    public configObject: GtConfig<any>;
+    // public configObject: GtConfig<any>;
     constructor(
         repo: Repository
     ) {
+        /*
         this.configObject = {
             settings: [
                 {
@@ -73,5 +74,6 @@ export class UserListComponent {
                 }
             ]    
         }
+        */
     }
 }
