@@ -14,6 +14,7 @@ import { GenericModalComponent } from "./dialog/generic/generic-modal.component"
 import { CommentDialogComponent } from "./dialog/components/comment/comment-dialog.component";
 
 import { GenericListComponent } from "./list/generic/generic-list.component";
+import { GenericEditorComponent } from "./editor/generic/generic-editor.component";
 
 export const COMPONENTS = [
     DatagridSettingsComponent,
@@ -24,7 +25,8 @@ export const COMPONENTS = [
     AuthStatusComponent,
     GenericModalComponent,
     CommentDialogComponent,
-    GenericListComponent
+    GenericListComponent,
+    GenericEditorComponent
 ]
 
 @NgModule({

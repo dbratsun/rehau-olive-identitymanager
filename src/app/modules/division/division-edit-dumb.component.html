@@ -1,0 +1,37 @@
+<generic-editor [editing]="editing" typeName="Division" (onSave)="save(division)" (onCancel)="cancel()" (onReset)="reset()">
+    <section class="form-block">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="division.name" required />
+        </div>
+        <div class="form-group">
+            <label>Shortname</label>
+            <input type="text" name="shortname" [(ngModel)]="division.shortname" required />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea rows="3" name="description" [(ngModel)]="division.description" size="90"></textarea>
+        </div>
+    </section>
+    <section class="form-block" size="70">
+        <clr-stack-view size="70">
+            <clr-stack-block>
+                <clr-stack-label>Users</clr-stack-label>
+                <clr-stack-block *ngFor="let user of division.users">
+                    <clr-stack-label>{{user.fullname}}</clr-stack-label>
+                    <clr-stack-content>{{user.email}}</clr-stack-content>
+                    <!--clr-stack-content>
+                        <button class="btn btn-link">Remove
+                            <!!--clr-icon shape="close" size="16"></clr-icon--!>
+                        </button>
+                    </clr-stack-content-->
+                </clr-stack-block>
+                <clr-stack-block>
+                    <clr-stack-label>
+                        <button type="button" class="btn btn-secondary" (click)="openUserModal($event)">Change</button>
+                    </clr-stack-label>
+                </clr-stack-block>
+            </clr-stack-block>
+        </clr-stack-view>
+    </section>
+</generic-editor>

@@ -2,7 +2,7 @@
     <div [ngClass]="{'col-xs-9' : !settingsCollapsed, 'col-xs-12': settingsCollapsed}">
         <div class="row">
             <div class="col-xs-10">
-                <button class="btn btn-primary" routerLink="addRouterLink">ADD</button>
+                <button class="btn btn-primary" (click)="addClick()">ADD</button>
             </div>
             <div class="row col-xs-2 flex-items-xs-right">
                     <button class="btn" (click)="toggleSettings()">Settings

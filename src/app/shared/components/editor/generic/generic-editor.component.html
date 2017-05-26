@@ -1,0 +1,12 @@
+<h2>{{editing  ? "Edit" : "Create"}} {{typeName}}</h2>
+<div class="col-xs-6">
+    <form novalidate #form="ngForm" (ngSubmit)="save(form)" (reset)="reset()" >
+        <ng-content></ng-content>
+        <button type="submit" class="btn btn-primary" 
+                [class.btn-warning]="editing" [disabled]="form.invalid">
+            {{editing ? "Save" : "Create"}}
+        </button>
+        <button type="reset" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+</div>
+

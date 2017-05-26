@@ -82,5 +82,9 @@ export class StaticDataSource {
         }
     }
 
+    getDivisions() {
+        return this.division;
+    }
+
 }
 

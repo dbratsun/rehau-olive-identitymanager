@@ -5,7 +5,8 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { UserListComponent } from './modules/user/user-list.component';
 import { ConfigurationComponent } from './modules/configuration/configuration.component';
 import { UnderConstructionComponent } from './modules/underconstruction/underconstruction.component';
-import { DivisionComponent } from './modules/division/division.component';
+import { DivisionViewComponent } from './modules/division/division-view.component';
+import { DivisionEditComponent } from './modules/division/division-edit.component';
 import { RegionComponent } from './modules/region/components/region/region.component';
 import { RegionEditComponent } from './modules/region/components/region/region-edit.component';
 
@@ -22,7 +23,9 @@ const routes: Routes = [
       { path: 'configuration', redirectTo: '/configuration/settings', pathMatch: 'full' },
       { path: 'configuration/settings', component: ConfigurationComponent },
       { path: 'organization', redirectTo: '/organization/division', pathMatch: 'full' },
-      { path: 'organization/division', component: DivisionComponent },
+      { path: 'organization/division', component: DivisionViewComponent },
+      { path: 'organization/division/:mode', component: DivisionEditComponent },
+      { path: 'organization/division/:mode/:id', component: DivisionEditComponent },
       { path: 'organization/region', component: RegionComponent },
       { path: 'organization/region/:mode', component: RegionEditComponent },
       { path: 'organization/region/:mode/:id', component: RegionEditComponent }

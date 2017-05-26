@@ -1,0 +1,50 @@
+<!--
+<div class="row">
+    <div [ngClass]="{'col-xs-9' : !settingsCollapsed, 'col-xs-12': settingsCollapsed}">
+        <div class="row">
+            <div class="col-xs-10">
+                <button class="btn btn-primary" (click)="newDivision()">ADD</button>
+            </div>
+            <div class="row col-xs-2 flex-items-xs-right">
+                    <button class="btn" (click)="toggleSettings()">Settings
+                        <clr-icon *ngIf="settingsCollapsed"shape="collapse right"></clr-icon>
+                        <clr-icon *ngIf="!settingsCollapsed"shape="collapse left"></clr-icon>
+                    </button>
+            </div>
+        </div>
+-->
+<generic-list [settingsCollapsed]="settingsCollapsed" (onAdd)="newDivision()">
+    <clr-datagrid>
+        <clr-dg-column>ID</clr-dg-column>
+        <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'shortname'">Shortname</clr-dg-column>
+        <clr-dg-column [clrDgField]="'description'">Description</clr-dg-column>
+        <clr-dg-column [clrDgField]="'users'">Users</clr-dg-column>
+        <clr-dg-placeholder>We couldn't find any division!</clr-dg-placeholder>
+        <clr-dg-row *clrDgItems="let item of items" [clrDgItem]="item">
+            <clr-dg-cell>{{item.id}}</clr-dg-cell>
+            <clr-dg-cell>{{item.name}}</clr-dg-cell>
+            <clr-dg-cell>{{item.shortname}}</clr-dg-cell>
+            <clr-dg-cell>{{item.description}}</clr-dg-cell>
+            <clr-dg-cell>{{getUsersInfoString(item)}}</clr-dg-cell>
+            <clr-dg-action-overflow>
+                <button class="action-item" (click)="editDivision(item)">Edit</button>
+                <button class="action-item" (click)="deleteDivision(item)">Delete</button>
+            </clr-dg-action-overflow>
+        </clr-dg-row>
+        <clr-dg-footer>
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+            of {{pagination.totalItems}} users
+            <clr-dg-pagination #pagination [clrDgPageSize]="rowsPerPage"></clr-dg-pagination>
+        </clr-dg-footer>
+    </clr-datagrid>
+</generic-list>    
+<!--        
+    </div>
+    <div *ngIf="!settingsCollapsed" class="col-xs-3">
+        <app-datagrid-settings (values)="settingsChanged($event)" 
+            numberFieldName="regions" [countToShow]="pagination.totalItems" [rowsPerPage]="rowsPerPage">
+        </app-datagrid-settings>
+    </div>
+</div>
+-->

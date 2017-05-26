@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ListSettings } from "../../../models/list-settings";
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,8 +7,10 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: "generic-list.component.html"
 })
 export class GenericListComponent {
+    @Input() settingsCollapsed: boolean = true
+    @Output() onAdd = new EventEmitter();
+
     addRouterLink: string = "";
-    settingsCollapsed: boolean = true;
     settings: ListSettings = new ListSettings(10, 0);
 
     constructor(
@@ -23,6 +25,10 @@ export class GenericListComponent {
         let v = value;
         this.settings.rowsPerPage = value.rowsPerPage;
         this.settings.countToShow = value.countToShow;
+    }
+
+    addClick() {
+        this.onAdd.emit();    
     }
 
 }

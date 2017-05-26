@@ -10,7 +10,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserListComponent } from './user/user-list.component';
 import { UserSelectComponent } from './user/user-select.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
-import { DivisionComponent } from './division/division.component';
+import { DivisionViewComponent } from './division/division-view.component';
+import { DivisionViewContainerComponent } from './division/division-view-container.component';
+import { DivisionViewDumbComponent } from './division/division-view-dumb.component';
+import { DivisionEditComponent } from './division/division-edit.component';
+import { DivisionEditContainerComponent } from './division/division-edit-container.component';
+import { DivisionEditDumbComponent } from './division/division-edit-dumb.component';
 import { RegionComponent } from './region/components/region/region.component';
 import { RegionEditComponent } from './region/components/region/region-edit.component';
 
@@ -22,7 +27,12 @@ const COMPONENTS = [
     DashboardComponent,
     UserListComponent,
     UserSelectComponent,
-    DivisionComponent,
+    DivisionViewComponent,
+    DivisionViewContainerComponent,
+    DivisionViewDumbComponent,
+    DivisionEditComponent,
+    DivisionEditContainerComponent,
+    DivisionEditDumbComponent,
     RegionComponent,
     RegionEditComponent,
     ConfigurationComponent
