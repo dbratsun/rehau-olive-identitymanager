@@ -20,6 +20,9 @@ import { Repository } from './shared/models/repository.model';
 import { ClarityModule } from 'clarity-angular';
 // import { GenericTableModule } from '@angular-generic-table/core';
 
+import { StoreModule, Store, provideStore } from "@ngrx/store";
+import { reducer } from './core/store/store.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,12 +40,13 @@ import { ClarityModule } from 'clarity-angular';
     ModulesModule,
     ModelsModule,
     SharedComponentsModule,
-    ClarityModule.forRoot()
+    ClarityModule.forRoot(),
+    StoreModule.provideStore(reducer)
     // GenericTableModule
   ],
   providers: [
     Repository, // Class provider with dependencies https://angular.io/docs/ts/latest/guide/dependency-injection.html
-    { provide: XHRBackend, useClass: MockXHRBackend }
+    { provide: XHRBackend, useClass: MockXHRBackend } 
   ],
   bootstrap: [AppComponent]
 })

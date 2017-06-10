@@ -12,5 +12,5 @@ export class User {
         public regions?: Region[],
         public division?: Division[]
     ) {}
-
 }
+
