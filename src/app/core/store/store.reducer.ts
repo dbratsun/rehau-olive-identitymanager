@@ -1,6 +1,13 @@
+import { Observable } from 'rxjs/Observable';
+import { createSelector } from 'reselect';
 import { ActionReducer } from '@ngrx/store';
 import * as fromRole from './role/role.reducer';
+import * as fromRoleList from './role/role-list.reducer';
 import { environment } from '../../../environments/environment';
+import { RoleListState } from './role/role-list.reducer';
+import { Role } from '../models/role';
+import 'rxjs/add/operator/let';
+import '@ngrx/core/add/operator/select';
 /**
  * The compose function is one of our most handy tools. In basic terms, you give
  * it any number of functions and it returns a function. This new function
@@ -29,12 +36,12 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 export interface State {
-    rolelist: fromRole.RoleListState;
-    role: fromRole.RoleState;
+    roles: fromRoleList.RoleListState
+    role: fromRole.State;
 }
 
 const reducers = {
-    rolelist: fromRole.rolelist_reducer,
+    roles: fromRoleList.rolelist_reducer,
     role: fromRole.role_reducer
 }
 
@@ -49,4 +56,12 @@ export function reducer(state: any, action: any) {
   }
 
 }
- 
+
+
+export const getRolesState = (state: State) => state.roles;
+export const getRoles = createSelector(getRolesState, fromRoleList.getRoles);
+
+export function getRoles$ (state$: Observable<State>): Observable<Role[]> {
+    return state$.select(state => state.roles.roles);
+}  
+

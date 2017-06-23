@@ -20,6 +20,12 @@ export class MockXHRBackend {
                             status: 200
                         })
                     }
+                    if (request.url === 'roles') {
+                        responseOptions = new ResponseOptions({
+                            body: { roles: JSON.parse(JSON.stringify(this.repo.getRoles()))},
+                            status: 200
+                        })
+                    }
             }
             var responseObject = new Response(responseOptions);
             responseObserver.next(responseObject);

@@ -9,6 +9,7 @@ import { DivisionViewComponent } from './modules/division/division-view.componen
 import { DivisionEditComponent } from './modules/division/division-edit.component';
 import { RegionComponent } from './modules/region/components/region/region.component';
 import { RegionEditComponent } from './modules/region/components/region/region-edit.component';
+import { RoleViewComponent } from './modules/role/role-view.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'underconstruction', component: UnderConstructionComponent },
       { path: 'dashboard/main', component: DashboardComponent },
       { path: 'dashboard', redirectTo: '/dashboard/main', pathMatch: 'full' },
+      { path: 'users/roles', component: RoleViewComponent },
       { path: 'users', redirectTo: '/users/users', pathMatch: 'full' },
       { path: 'users/users', component: UserListComponent },
       { path: 'configuration', redirectTo: '/configuration/settings', pathMatch: 'full' },

@@ -21,7 +21,20 @@ import { ClarityModule } from 'clarity-angular';
 // import { GenericTableModule } from '@angular-generic-table/core';
 
 import { StoreModule, Store, provideStore } from "@ngrx/store";
+import { EffectsModule } from '@ngrx/effects';
 import { reducer } from './core/store/store.reducer';
+
+import { RoleListEffects } from './core/store/role/role.effects';
+
+// add log monitor
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
+
+export function instrumentOptions() {
+  return {
+    monitor: useLogMonitor({ visible: true, position: 'right' })
+  };
+}
 
 @NgModule({
   declarations: [
@@ -41,8 +54,12 @@ import { reducer } from './core/store/store.reducer';
     ModelsModule,
     SharedComponentsModule,
     ClarityModule.forRoot(),
-    StoreModule.provideStore(reducer)
+    StoreModule.provideStore(reducer),
+    EffectsModule.run(RoleListEffects),
     // GenericTableModule
+    // log monitor
+    StoreDevtoolsModule.instrumentStore(instrumentOptions),
+    StoreLogMonitorModule
   ],
   providers: [
     Repository, // Class provider with dependencies https://angular.io/docs/ts/latest/guide/dependency-injection.html

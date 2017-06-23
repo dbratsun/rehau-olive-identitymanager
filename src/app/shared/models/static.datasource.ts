@@ -2,13 +2,16 @@ import { Injectable } from "@angular/core";
 import { Region } from "./region";
 import { User } from './user';
 import { Division } from './division';
+import { Role } from './role';
 
 @Injectable()
 export class StaticDataSource {
     private regions: Region[];
     private users: User[];
     private division: Division[];
+    private roles: Role[];
     private regionLocator = (r: Region, id: number) => r.id == id;
+    private roleLocator = (r: Role, id: number) => r.id == id;
 
     constructor() {
         this.users = new Array<User>(
@@ -43,6 +46,12 @@ export class StaticDataSource {
         this.users[0].regions.push(this.regions[0], this.regions[1], this.regions[2], this.regions[3]);
         this.users[1].regions.push(this.regions[1], this.regions[3]);
         this.users[2].regions.push(this.regions[2], this.regions[3]);
+
+        this.roles = new Array<Role>(
+            new Role(1, "admin", "Administrator Role"),
+            new Role(2, "role1", "Role 1"),
+            new Role(3, "role2", "Role 2")
+        )
     }
 
     getRegions(): Region[] {
@@ -51,6 +60,10 @@ export class StaticDataSource {
 
     getUsers(): User[] {
         return this.users;
+    }
+
+    getRoles(): Role[] {
+        return this.roles;
     }
 
     getMaxRegionId(): number {

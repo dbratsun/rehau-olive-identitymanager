@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Region } from "./region";
 import { Division } from "./division";
 import { User } from "./user";
+import { Role } from "./role";
 import { Observable } from "rxjs/Observable";
 import { StaticDataSource } from "./static.datasource";
 
@@ -10,6 +11,7 @@ export class Repository {
     private regions: Region[] = new Array<Region>();
     private users: User[] = new Array<User>();
     private division: Division[] = new Array<Division>();
+    private roles: Role[] = new Array<Role>();
     private regionLocator = (r: Region, id: number) => r.id == id;
     private divisionLocator = (d: Division, id: number) => d.id == id;
 
@@ -19,10 +21,15 @@ export class Repository {
         this.dataSource.getRegions().forEach(r => this.regions.push(r));
         this.division = new Array<Division>();
         this.dataSource.getDivisions().forEach(d => this.division.push(d));
+        this.dataSource.getRoles().forEach(r => this.roles.push(r));
     }
 
     getUsers() : User[] {
         return this.dataSource.getUsers();
+    }
+
+    getRoles() : Role[] {
+        return this.dataSource.getRoles();
     }
 
     getRegions() : Region[] {

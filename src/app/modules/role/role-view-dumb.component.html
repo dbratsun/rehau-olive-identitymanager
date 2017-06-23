@@ -1,0 +1,22 @@
+<generic-list [settingsCollapsed]="settingsCollapsed" (onAdd)="newRole()">
+    <clr-datagrid>
+        <clr-dg-column>ID</clr-dg-column>
+        <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'description'">Description</clr-dg-column>
+        <clr-dg-placeholder>We couldn't find any role!</clr-dg-placeholder>
+        <clr-dg-row *clrDgItems="let item of items" [clrDgItem]="item">
+            <clr-dg-cell>{{item.id}}</clr-dg-cell>
+            <clr-dg-cell>{{item.name}}</clr-dg-cell>
+            <clr-dg-cell>{{item.description}}</clr-dg-cell>
+            <clr-dg-action-overflow>
+                <button class="action-item" (click)="editRole(item)">Edit</button>
+                <button class="action-item" (click)="deleteRole(item)">Delete</button>
+            </clr-dg-action-overflow>
+        </clr-dg-row>
+        <clr-dg-footer>
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+            of {{pagination.totalItems}} users
+            <clr-dg-pagination #pagination [clrDgPageSize]="rowsPerPage"></clr-dg-pagination>
+        </clr-dg-footer>
+    </clr-datagrid>
+</generic-list> 

@@ -112,16 +112,16 @@ export const REMOVE_ROLE_FAIL = '[Role] Remove Role Fail';
 export const SAVE_ROLE = '[Role] Save Role';
 export const SAVE_ROLE_SUCCESS = '[Role] Save Role Success';
 export const SAVE_ROLE_FAIL = '[Role] Save Role Fail';
-export const LOAD = '[Role] Load';
-export const LOAD_SUCCESS = '[Role] Load Success';
-export const LOAD_FAIL = '[Role] Load Fail';
+export const LOAD_ROLES = '[Role] Load';
+export const LOAD_ROLES_SUCCESS = '[Role] Load Success';
+export const LOAD_ROLES_FAIL = '[Role] Load Fail';
 export const GET_ROLE = '[Role] Get Role';
 export const GET_ROLE_SUCCESS = '[Role] Get Role Success';
 export const GET_ROLE_FAIL = '[Role] Get Role Fail';
 export const RESET_BLANK_ROLE = '[Role] Reset Blank Role';
-export const SEARCH = '[Role] Search';
-export const SEARCH_COMPLETE = '[Role] Search Complete';
-export const SELECT = '[Role] Select';
+export const SEARCH_ROLE = '[Role] Search';
+export const SEARCH_ROLE_COMPLETE = '[Role] Search Complete';
+export const SELECT_ROLE = '[Role] Select';
 
 /* Add Role */
 export class AddRoleAction implements Action {
@@ -173,16 +173,17 @@ export class SaveRoleFailAction implements Action {
 
 /* Load Roles */
 export class LoadRolesAction implements Action {
-    readonly type = LOAD;
+    readonly type = LOAD_ROLES;
 }
 
 export class LoadRolesSuccessAction implements Action {
-    readonly type = LOAD_SUCCESS;
+    readonly type = LOAD_ROLES_SUCCESS;
     constructor(public payload: Role[]) { }
 }
 
 export class LoadRolesFailAction implements Action {
-    readonly type = LOAD_FAIL;
+    readonly type = LOAD_ROLES_FAIL;
+    constructor(public payload: any) { }
 }
 
 /* Get Role */
@@ -208,18 +209,18 @@ export class ResetBlankRoleAction implements Action {
 
 /* Search Role */
 export class SearchRoleAction implements Action {
-    readonly type = SEARCH;
+    readonly type = SEARCH_ROLE;
     constructor(public payload: string) { }
 }
 
 export class SearchCompleteRoleAction implements Action {
-    readonly type = SEARCH_COMPLETE;
+    readonly type = SEARCH_ROLE_COMPLETE;
     constructor(public payload: Role[]) { }
 }
 
 /* Select Role */
 export class SelectRoleAction implements Action {
-    readonly type = SELECT;
+    readonly type = SELECT_ROLE;
     constructor(public payload: Role[]) { }
 }
 

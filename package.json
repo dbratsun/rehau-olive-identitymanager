@@ -27,6 +27,8 @@
     "@ngrx/db": "^2.0.2",
     "@ngrx/effects": "^2.0.3",
     "@ngrx/store": "^2.2.2",
+    "@ngrx/store-devtools": "^3.2.4",
+    "@ngrx/store-log-monitor": "^3.0.2",
     "@webcomponents/custom-elements": "^1.0.0",
     "bootstrap": "^4.0.0-alpha.6",
     "clarity-angular": "^0.9.8",
@@ -35,6 +37,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "mutationobserver-shim": "^0.3.2",
+    "reselect": "^3.0.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

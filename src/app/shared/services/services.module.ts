@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SettingsService } from './settings.service';
 import { RegionService } from './region.service';
+import { RoleService } from './role.service';
 import { ModelsModule } from '../models/models.module';
 
 @NgModule({
@@ -15,7 +16,8 @@ export class ServicesModule{
       ngModule: ServicesModule,
       providers: [
         SettingsService,
-        RegionService
+        RegionService,
+        RoleService
       ]
     }
   }
@@ -23,5 +25,6 @@ export class ServicesModule{
 
 export {
   SettingsService,
-  RegionService
+  RegionService,
+  RoleService
 }
