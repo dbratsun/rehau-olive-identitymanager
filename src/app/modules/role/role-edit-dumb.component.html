@@ -1,0 +1,12 @@
+<generic-editor [editing]="editing" typeName="Role" (onSave)="save(role)" (onCancel)="cancel()" (onReset)="reset()">
+    <section class="form-block">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="role.name" required />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea rows="3" name="description" [(ngModel)]="role.description" size="90"></textarea>
+        </div>
+    </section>
+</generic-editor>

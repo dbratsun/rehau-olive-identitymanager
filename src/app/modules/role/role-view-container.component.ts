@@ -26,10 +26,11 @@ export class RoleViewContainerComponent implements OnInit {
     roles$: Observable<Role[]>; // this.store.let(getRoles$);
     settingsCollapsed: boolean = true;
 
-    constructor(private store: Store<fromRoot.State>) {
-        // this.store.dispatch(new fromRoleActions.LoadRolesAction());
+    constructor(
+        private store: Store<fromRoot.State>,
+        private router: Router
+    ) {
         this.roles$ = this.store.select(fromRoot.getRoles);
-        // this.roles$ = this.store.let(fromRoot.getRoles$)
     }
 
     ngOnInit() {
@@ -37,12 +38,15 @@ export class RoleViewContainerComponent implements OnInit {
     }
 
     newRole() {
+        this.router.navigateByUrl("/users/role/new");
     }
 
     editRole(role: Role) {
+        this.router.navigateByUrl("users/role/edit/" + role.id)
     }
 
     deleteRole(role: Role) {
+        this.store.dispatch(new fromRoleActions.RemoveRoleAction(role));
     }
  
     selectRole() { }

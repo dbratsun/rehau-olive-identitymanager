@@ -3,6 +3,7 @@ import { Request, Response, ResponseOptions, RequestMethod} from '@angular/http'
 import { Observable} from 'rxjs/Observable';
 import { Observer} from 'rxjs/Observer';
 import { Repository } from '../models/repository.model';
+import { Role } from '../models/role';
 
 @Injectable()
 export class MockXHRBackend {
@@ -26,6 +27,27 @@ export class MockXHRBackend {
                             status: 200
                         })
                     }
+                    else {
+                        if (request.url.split('/')[0] == 'roles') {
+                            var id = parseInt(request.url.split('/')[1]);
+                            let role = this.repo.getRole(id);
+                            responseOptions = new ResponseOptions({
+                                body: { role: JSON.parse(JSON.stringify(this.repo.getRole(id)))},
+                                status: 200
+                            })
+                        }
+                    }
+                    break;
+                case RequestMethod.Post:
+                    let classType = request.url.split('/')[0];
+                    switch (classType) {
+                        case 'roles':
+                            let role : Role = JSON.parse(request.getBody());
+                            this.repo.saveRole(role);
+                            responseOptions = new ResponseOptions({ status: 201 })
+                    }
+                    break;
+                case RequestMethod.Delete:
             }
             var responseObject = new Response(responseOptions);
             responseObserver.next(responseObject);

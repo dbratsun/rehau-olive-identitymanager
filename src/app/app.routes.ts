@@ -10,6 +10,7 @@ import { DivisionEditComponent } from './modules/division/division-edit.componen
 import { RegionComponent } from './modules/region/components/region/region.component';
 import { RegionEditComponent } from './modules/region/components/region/region-edit.component';
 import { RoleViewComponent } from './modules/role/role-view.component';
+import { RoleEditComponent } from './modules/role/role-edit.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
       { path: 'users/roles', component: RoleViewComponent },
       { path: 'users', redirectTo: '/users/users', pathMatch: 'full' },
       { path: 'users/users', component: UserListComponent },
+      { path: 'users/role/:mode', component: RoleEditComponent },
+      { path: 'users/role/:mode/:id', component: RoleEditComponent },
       { path: 'configuration', redirectTo: '/configuration/settings', pathMatch: 'full' },
       { path: 'configuration/settings', component: ConfigurationComponent },
       { path: 'organization', redirectTo: '/organization/division', pathMatch: 'full' },

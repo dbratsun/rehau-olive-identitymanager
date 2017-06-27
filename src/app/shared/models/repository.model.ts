@@ -13,6 +13,7 @@ export class Repository {
     private division: Division[] = new Array<Division>();
     private roles: Role[] = new Array<Role>();
     private regionLocator = (r: Region, id: number) => r.id == id;
+    private roleLocator = (r: Role, id: number) => r.id == id;
     private divisionLocator = (d: Division, id: number) => d.id == id;
 
     constructor(private dataSource: StaticDataSource) {
@@ -29,7 +30,30 @@ export class Repository {
     }
 
     getRoles() : Role[] {
-        return this.dataSource.getRoles();
+        return this.roles;
+    }
+
+    getRole(id: number): Role {
+        return this.roles.find(r => this.roleLocator(r, id));
+    }
+
+    saveRole(role: Role) {
+        if (role.id == 0 || role.id == null) {
+            role.id = this.generateIDforRole();
+            this.roles.push(role);
+        } else {
+            let index = this.roles.findIndex(p => this.roleLocator(p, role.id));
+            this.roles.splice(index, 1, role);
+        }
+       //  this.dataSource.saveRegion(region);
+    }
+
+    private generateIDforRole(): number {
+        let candidate = 100;
+        while (this.getRole(candidate) != null) {
+            candidate++;
+        }
+        return candidate;
     }
 
     getRegions() : Region[] {
@@ -58,6 +82,7 @@ export class Repository {
         }
         // this.dataSource.deleteRegion(id);
     }
+
     private generateIDforRegion(): number {
         let candidate = 100;
         while (this.getRegion(candidate) != null) {

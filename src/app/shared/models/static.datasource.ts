@@ -66,6 +66,10 @@ export class StaticDataSource {
         return this.roles;
     }
 
+    getRole(id: number): Role {
+        return this.roles.find(role => role.id == id);
+    } 
+
     getMaxRegionId(): number {
         if (this.regions.length > 0) {
             return this.regions.map(value => value.id).sort().pop();

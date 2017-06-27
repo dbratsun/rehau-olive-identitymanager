@@ -27,6 +27,8 @@ export function role_reducer(state: State = initialState, action: actions.RoleAc
         case actions.RESET_BLANK_ROLE: {
             return initialState;
         }
+        default: 
+            return Object.assign({}, initialState, state)
     }
 }
 

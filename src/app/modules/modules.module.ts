@@ -21,6 +21,9 @@ import { RegionEditComponent } from './region/components/region/region-edit.comp
 import { RoleViewComponent } from './role/role-view.component';
 import { RoleViewContainerComponent } from './role/role-view-container.component';
 import { RoleViewDumbComponent } from './role/role-view-dumb.component';
+import { RoleEditComponent } from './role/role-edit.component';
+import { RoleEditContainerComponent } from './role/role-edit-container.component';
+import { RoleEditDumbComponent } from './role/role-edit-dumb.component';
 
 import { SharedComponentsModule } from '../shared/components/sharedcomponents.module';
 import { ModelsModule } from '../shared/models/models.module';
@@ -41,6 +44,9 @@ const COMPONENTS = [
     RoleViewComponent,
     RoleViewContainerComponent,
     RoleViewDumbComponent,
+    RoleEditComponent,
+    RoleEditContainerComponent,
+    RoleEditDumbComponent,
     ConfigurationComponent
 ];
 

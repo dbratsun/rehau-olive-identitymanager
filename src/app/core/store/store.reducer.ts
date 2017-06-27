@@ -60,6 +60,8 @@ export function reducer(state: any, action: any) {
 
 export const getRolesState = (state: State) => state.roles;
 export const getRoles = createSelector(getRolesState, fromRoleList.getRoles);
+export const getRoleState = (state: State) => state.role;
+export const getRole = createSelector(getRoleState, fromRole.getRole);
 
 export function getRoles$ (state$: Observable<State>): Observable<Role[]> {
     return state$.select(state => state.roles.roles);
